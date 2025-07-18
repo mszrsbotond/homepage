@@ -1,0 +1,135 @@
+@font-face {
+  font-family: srccode;
+  src: url(./SourceCodePro-Black.ttf);
+}
+
+:root {
+  --darkblue: rgb(9, 0, 53);
+  --grid-align: 1fr 1fr 1fr;
+  --disp-dir: row;
+}
+
+@media screen and (max-width: 900px) {
+  :root {
+    --grid-align: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  :root {
+    --disp-dir: column;
+  }
+}
+
+h1 {
+  margin: 0;
+}
+
+body {
+  background-color: rgb(1, 0, 20);
+  color: white;
+  font-family: srccode;
+}
+
+img {
+  display: block;
+}
+
+header {
+  display: flex;
+  flex-direction: var(--disp-dir);
+  margin: 5vw;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-pic {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 50%;
+}
+
+.profile-pic > img {
+  display: block;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 600px;
+  min-width: 300px;
+}
+
+.profile-pic > span {
+  position: absolute;
+  bottom: 2vw;
+  left: 2vw;
+  margin-left: 2.5vw;
+  text-align: center;
+  font-size: 4vw;
+}
+
+.desc {
+  background-color: var(--darkblue);
+  flex: 1;
+  overflow: auto;
+  padding: 1rem;
+}
+
+.desc > h1 {
+  font-size: clamp(1rem, 2vw, 2rem);
+  margin: 1vw;
+}
+
+.desc > span {
+  font-size: clamp(0.5rem, 1.2vw, 1.2rem);
+  overflow: hidden;
+  text-overflow: ellipsis; /* adds "..." if it’s cut off */
+  display: block; /* needed for text-overflow */
+  white-space: normal; /* wraps text */
+  word-break: break-word;
+}
+
+.cards {
+  margin-left: 4vw;
+  margin-right: 4vw;
+  display: grid;
+  gap: 4vw;
+  width: 92%;
+  grid-template-columns: var(--grid-align);
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  max-width: 300px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+  justify-content: center;
+  align-items: center;
+  padding: 1vw;
+  text-align: center;
+}
+
+.card > img {
+  width: 100%;
+}
+
+.project-name-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 1vw;
+}
+
+.project-name-container > img {
+  height: 30px;
+  filter: invert(1);
+}
+
+.card > span {
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 5vw;
+}
